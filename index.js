@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { title } = require("process");
-// const { message } = require("status")
+
 // TODO: Create an array of questions for user input
 inquirer.prompt(
     [
@@ -118,7 +118,28 @@ inquirer.prompt(
     Email
 
     })  => {
-        
+    const template = `# ${title}
+
+    *[installation](#installation)
+    *[usage](#usage)
+    * [contributors](#contributors)
+    * [license](#license)
+    # Installation
+    ${installation}
+    ## Usage
+    ${usage}
+    ## Contributor(s)
+    ${contributors}
+    ##Description
+    ${description}
+    ##License
+    ${license}
+    
+    #Contact Information
+    *GitHub :${GitU}
+    *Email : ${Email}
+    
+    `
     })
     
 
@@ -134,6 +155,7 @@ function writeToFile(fileName, data) {
     
 })
 }
+
 // TODO: Create a function to initialize app
 function init() {}
 
