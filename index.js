@@ -118,7 +118,9 @@ inquirer.prompt(
     Email
 
     })  => {
-    const template = `# ${title}
+    const template =
+
+    `# ${title}
 
     *[installation](#installation)
     *[usage](#usage)
@@ -140,25 +142,12 @@ inquirer.prompt(
     *Email : ${Email}
     
     `
-    })
-    
-
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(`./${fileName.toLowerCase().split(" ").join("")}nd`, data, (err)=>{
+    fs.writeFileSync(`OUTPUTREADME.md`, template, (err)=>{
     if(err){
         console.log(err)
     }
-    console.log("Yore ReadMe has been created");
     
 })
-}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+console.log("Yore ReadMe has been created",template);
+})
 
